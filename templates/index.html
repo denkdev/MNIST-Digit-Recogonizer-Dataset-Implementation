@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Neural Network Training</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>MNIST Neural Network Trainer</h1>
+        <form method="post">
+            <button type="submit" class="run-button">Run Training</button>
+        </form>
+        
+        {% if output %}
+        <div class="output-container">
+            <h2>Training Results:</h2>
+            <pre>{{ output }}</pre>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

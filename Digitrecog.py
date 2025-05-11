@@ -80,12 +80,12 @@ def train(A_0, W_1, B_1, W_2, B_2, Y, learning_rate):
     Z_1, A_1, Z_2, A_2 = forward_propagation(A_0, W_1, B_1, W_2, B_2)
     dW_1, dB_1, dW_2, dB_2 = backward_propagation(A_0, W_1, B_1, W_2, B_2, Z_1, A_1, Z_2, A_2, Y)
     W_1, B_1, W_2, B_2 = adjust(W_1, B_1, W_2, B_2, dW_1, dB_1, dW_2, dB_2, learning_rate)
-    print(f'The training Accuracy of the Network is : {accuracy(A_2, Y)}')
+    print(f'The training Accuracy of the Network is : {accuracy(A_2, Y):.4f}')
     return W_1,B_1,W_2,B_2
 
 # Training Loop
 learning_rate = 0.1
-num_epochs = 20
+num_epochs = 500 
 
 for epoch in range(num_epochs):
     W_1, B_1, W_2, B_2 = train(X, W_1, B_1, W_2, B_2, Y, learning_rate)
